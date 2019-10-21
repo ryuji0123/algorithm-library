@@ -1,17 +1,20 @@
-import math
+from math import sqrt
 
-def prime_factorize(n):
-    ret = []
-    while n % 2 == 0:
-        ret.append(2)
-        n //= 2
-    div = 3
-    while div <= math.sqrt(n):
-        if n % div == 0:
-            ret.append(div)
-            n //= div
-        else:
-            div += 2
-    if n != 1:
-        ret.append(n)
-    return ret
+def factorization(n):
+    arr = []
+    tmp = n
+    for div in range(2, int(sqrt(n)) + 2):
+        if tmp % div == 0:
+            cnt = 0
+            while tmp % div == 0:
+                cnt += 1
+                tmp //= div
+            arr.append([div, cnt])
+
+    if tmp != 1:
+        arr.append([tmp, 1])
+
+    if len(arr) == 0:
+        arr.append([n, 1])
+
+    return arr
