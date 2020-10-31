@@ -1,6 +1,7 @@
-def num2alpha(num):
-    if num <= 26:
-        return chr(ord('a') - 1 + num)
-    if num % 26 == 0:
-        return num2alpha(num // 26 - 1)+chr(ord('z'))
-    return num2alpha(num // 26)+chr(ord('a') - 1 + num % 26)
+def num2alpha(N):
+    ret = ''
+    while 0 < N:
+        N -= 1
+        ret += chr(ord('a') + N % 26)
+        N //= 26
+    return ret[::-1]
