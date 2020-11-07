@@ -9,7 +9,7 @@ class Trie:
             if c not in t:
                 t[c] = {}
             t = t[c]
-        t[self.eow] = None
+        t[self.eow] = t.get(self.eow, 0) + 1
 
     def search(self, word):
         t = self.tree
