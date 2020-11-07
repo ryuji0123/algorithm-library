@@ -1,3 +1,9 @@
+from math import gcd
+
+def lcm(x, y):
+    return (x * y) // gcd(x, y)
+
+
 def make_divisors(n):
     lower_divisors, upper_divisors = [], []
     i = 1
