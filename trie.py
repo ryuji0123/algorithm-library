@@ -1,4 +1,5 @@
 class Trie:
+
     def __init__(self):
         self.tree = {}
         self.eow = 'EOW'
@@ -47,3 +48,30 @@ class Trie:
                 return False
             t = t[c]
         return True
+
+
+class Trie:
+
+    def __init__(self):
+        self.tree = {}
+        self.sub = 'SUB'
+        self.cached_tree = self.tree
+
+    def add(self, word):
+        t = self.tree
+        for c in word:
+            if c not in t:
+                t[c] = {self.sub: []}
+
+            t = t[c]
+            t[self.sub].append(word)
+
+
+    def incSearch(self, c):
+        t = self.cached_tree
+        if t is None or c not in t:
+            self.cached_tree = None
+            return []
+
+        self.cached_tree = t[c]
+        return self.cached_tree[self.sub]
