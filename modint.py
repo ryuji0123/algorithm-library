@@ -1,5 +1,8 @@
 MOD = 10**9 + 7
+
+
 class ModInt:
+
     def __init__(self, x):
         self.x = x % MOD
 
