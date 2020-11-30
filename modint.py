@@ -68,7 +68,7 @@ class ModInt:
         )
 
 
-fact = [Modint(1)]
+fact = [ModInt(1)]
 for i in range(1, N + 1):
     fact.append(fact[i - 1] * i)
 
