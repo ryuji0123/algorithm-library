@@ -1,9 +1,9 @@
 def convertNegativeBase(N, neg_base):
-    if (N == 0):
+    if N == 0:
         return '0'
 
     ret = []
-    while (N != 0):
+    while N != 0:
         div = int(N / neg_base)
         remainder = N - neg_base * div
         if remainder < 0:
