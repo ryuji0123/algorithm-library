@@ -68,10 +68,9 @@ class ModInt:
         )
 
 
+def cmb(n, r):
+    return fact[n] / fact[n - r] / fact[r]
+
 fact = [ModInt(1)]
 for i in range(1, N + 1):
     fact.append(fact[i - 1] * i)
-
-
-def cmb(n, r):
-    return fact[n] / fact[n - r] / fact[r]
