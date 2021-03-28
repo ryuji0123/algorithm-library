@@ -35,13 +35,15 @@ from math import sqrt
 def factorization(n):
     arr = []
     tmp = n
-    for div in range(2, int(sqrt(n)) + 2):
+    div = 2
+    while div * div <= n:
         if tmp % div == 0:
             cnt = 0
             while tmp % div == 0:
                 cnt += 1
                 tmp //= div
             arr.append([div, cnt])
+        div += 1
 
     if tmp != 1:
         arr.append([tmp, 1])
